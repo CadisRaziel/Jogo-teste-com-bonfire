@@ -18,6 +18,9 @@ class Game extends StatelessWidget {
       ),
       //showCollisionArea = para mostrar as areas que tem colisão (aparece em verde)
       showCollisionArea: false,
+
+      //lightingColorGame = iluminação do mapa(com o opacity ele vai ficando mais escuro ou mais claro)
+      lightingColorGame: Colors.black.withOpacity(0.6),
     );
   }
 }
