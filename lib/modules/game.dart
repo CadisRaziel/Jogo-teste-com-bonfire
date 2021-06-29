@@ -9,11 +9,15 @@ class Game extends StatelessWidget {
   Widget build(BuildContext context) {
     return BonfireTiledWidget(
       joystick: Joystick(directional: JoystickDirectional()),
-      map: TiledWorldMap('Mapa.json', forceTileSize: Size(32, 32)),
-      player: Guerreiro(Vector2(
-        2 * 32,
-        3 * 32,
-      )),
+      map: TiledWorldMap('Mapa.json', forceTileSize: Size(50, 50)),
+      player: Guerreiro(
+        Vector2(
+          2 * 42,
+          3 * 42,
+        ),
+      ),
+      //showCollisionArea = para mostrar as areas que tem colisão (aparece em verde)
+      showCollisionArea: false,
     );
   }
 }

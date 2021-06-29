@@ -1,7 +1,10 @@
 import 'package:bonfire/bonfire.dart';
+import 'package:flutter/material.dart';
 import 'package:joguinho/shared/widget/player_sprite_sheet.dart';
 
-class Guerreiro extends SimplePlayer {
+
+///para adicionar colisão adicione o 'with ObjectCollision'
+class Guerreiro extends SimplePlayer with ObjectCollision{
   Guerreiro(Vector2 position)
       : super(
           position: position,
@@ -12,7 +15,14 @@ class Guerreiro extends SimplePlayer {
             runRight: PlayerSpriteSheet.idleRunRight,
             runLeft: PlayerSpriteSheet.idleRunLeft,
           ),
-          width: 32,
-          height: 32,
-        );
+          //Tamanho do personagem !
+          width: 42,
+          height: 42,
+        ) {
+          setupCollision(
+            CollisionConfig(collisions: [
+              CollisionArea.rectangle(size: Size(22,22))
+            ])
+          );
+        }
 }
